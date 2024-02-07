@@ -20,16 +20,31 @@ interface RandomImagesResponse {
 }
 
 export const fetchBreeds = async (): Promise<BreedResponse> => {
-  const response = await axios.get<BreedResponse>(`${API_BASE_URL}/breeds/list/all`);
-  return response.data;
+  try {
+    const response = await axios.get<BreedResponse>(`${API_BASE_URL}/breeds/list/all`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching breeds:', error);
+    throw error; // 오류를 던져서 상위 컴포넌트에서 처리할 수 있도록 합니다.
+  }
 };
 
 export const fetchBreedImages = async (breed: string): Promise<ImagesResponse> => {
-  const response = await axios.get<ImagesResponse>(`${API_BASE_URL}/breed/${breed}/images`);
-  return response.data;
+  try {
+    const response = await axios.get<ImagesResponse>(`${API_BASE_URL}/breed/${breed}/images`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching breed images:', error);
+    throw error;
+  }
 };
 
 export const fetchRandomImages = async (count: number): Promise<RandomImagesResponse> => {
-  const response = await axios.get<RandomImagesResponse>(`${API_BASE_URL}/breeds/image/random/${count}`);
-  return response.data;
+  try {
+    const response = await axios.get<RandomImagesResponse>(`${API_BASE_URL}/breeds/image/random/${count}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching random images:', error);
+    throw error;
+  }
 };
