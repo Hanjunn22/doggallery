@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BreedList from './components/BreedList';
 import BreedImages from './components/BreedImages';
 
