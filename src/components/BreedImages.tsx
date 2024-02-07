@@ -37,7 +37,7 @@ const BreedImages: React.FC<Props> = ({ breed }) => {
             key={index}
             src={image}
             alt="Dog"
-            style={{ width: "200px", height: "200px", margin: "10px" }}
+            style={{ width: "200px", height: "200px", margin: "5px" }}
           />
         ))
       )}
