@@ -12,3 +12,28 @@
     height: auto;
   }
   
+  .dog-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: flex-start; /* 세로 방향으로는 상단 정렬 */
+    width: 100%; /* 부모 컨테이너의 전체 너비를 차지하도록 설정 */
+    max-width: 1200px; /* 최대 너비 설정, 필요에 따라 조정 */
+    margin: auto; /* 수평 중앙 정렬 */
+  }
+  
+  .dog-images-container p {
+    color: #fff; /* 흰색 또는 원하는 색상 */
+    font-size: 1.5rem; /* 크기 조정 */
+  }
+  
+  
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    flex-direction: column; /* 컨텐츠를 세로 방향으로 정렬 */
+  }

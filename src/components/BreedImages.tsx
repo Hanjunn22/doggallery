@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchBreedImages, fetchRandomImages } from '../api/dogs';
+import React, { useEffect, useState } from "react";
+import { fetchBreedImages, fetchRandomImages } from "../api/dogs";
 
 interface Props {
   breed: string;
@@ -14,11 +14,9 @@ const BreedImages: React.FC<Props> = ({ breed }) => {
       setLoading(true);
       let data;
       if (breed) {
-        // 선택된 품종의 이미지를 가져옵니다.
         data = await fetchBreedImages(breed);
       } else {
-        // 랜덤한 품종의 이미지를 가져옵니다.
-        data = await fetchRandomImages(80); // 예: 80개의 랜덤 이미지를 요청
+        data = await fetchRandomImages(80);
       }
       if (data && data.message) {
         setImages(Array.isArray(data.message) ? data.message : [data.message]);
@@ -29,13 +27,20 @@ const BreedImages: React.FC<Props> = ({ breed }) => {
     getImages();
   }, [breed]);
 
-  if (loading) return <p>Loading images...</p>;
-
   return (
-    <div>
-      {images.map((image, index) => (
-        <img key={index} src={image} alt="Dog" style={{ width: '100px', height: '100px', margin: '10px' }} />
-      ))}
+    <div className="dog-images-container">
+      {loading ? (
+        <p>Loading images...</p>
+      ) : (
+        images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt="Dog"
+            style={{ width: "200px", height: "200px", margin: "10px" }}
+          />
+        ))
+      )}
     </div>
   );
 };
