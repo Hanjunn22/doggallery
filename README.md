@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# 강아지 갤러리 :dog:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dog CEO's Dog API를 활용하여 강아지들의 품종별 사진을 볼 수 있습니다.
+드롭다운 박스를 클릭하여 품종을 선택해주세요.
 
-Currently, two official plugins are available:
+## 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **강아지 품종 탐색:** 전 세계의 다양한 강아지 품종을 발견하세요.
+- **품종 이미지 보기:** 각 품종의 다양한 이미지를 확인하세요.
+- **랜덤 강아지 이미지:** 랜덤 이미지를 통해 새로운 품종을 발견하세요.
+- **반응형 디자인:** 모바일부터 데스크탑까지 모든 기기에서 애플리케이션을 즐기세요. :computer: :iphone:
 
-## Expanding the ESLint configuration
+## 사용 기술
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React 18
+- TypeScript
+- CSS3
+- Dog CEO's Dog API
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![React](https://img.shields.io/badge/react-18.0-blue.svg)
+![TypeScript](https://img.shields.io/badge/typescript-latest-blue.svg)
+![CSS3](https://img.shields.io/badge/css3-styled--components-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
