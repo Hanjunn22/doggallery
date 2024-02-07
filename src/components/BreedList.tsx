@@ -25,18 +25,20 @@ const BreedList: React.FC<Props> = ({ onSelectBreed }) => {
   if (loading) return <p>Loading breeds...</p>;
 
   return (
-    <select
-      className="breed-select"
-      onChange={(e) => onSelectBreed(e.target.value)}
-      defaultValue=""
-    >
-      <option value="">All Breeds</option>
-      {breeds.map((breed) => (
-        <option key={breed} value={breed}>
-          {breed}
-        </option>
-      ))}
-    </select>
+    <div className="select-wrapper"> {/* 추가된 Wrapper */}
+      <select
+        className="breed-select"
+        onChange={(e) => onSelectBreed(e.target.value)}
+        defaultValue=""
+      >
+        <option value="">All Breeds</option>
+        {breeds.map((breed) => (
+          <option key={breed} value={breed}>
+            {breed}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 };
 

@@ -1,25 +1,36 @@
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 50%; /* 드롭다운의 너비를 조절합니다. */
+  max-width: 300px; /* 최대 너비를 설정해 너무 커지지 않도록 합니다. */
+}
+
 .breed-select {
-  padding: 10px 25px; /* 패딩을 늘려 더 크게 만듭니다. */
+  padding: 10px 25px; /* 상하 패딩을 늘립니다. */
+  padding-right: 45px; /* 화살표 공간을 위해 오른쪽 패딩을 조절합니다. */
   margin: 20px auto;
   display: block;
-  font-size: 20px; /* 폰트 크기를 늘려 가독성을 향상시킵니다. */
-  border: 2px solid #5e5f70; /* 보더 색상을 변경해 시각적으로 돋보이게 합니다. */
-  border-radius: 8px; /* 보더 라운드를 조금 더 늘립니다. */
-  width: 50%; /* 너비를 지정해 드롭다운의 크기를 조정합니다. */
-  max-width: 300px; /* 최대 너비를 설정해 너무 커지지 않도록 합니다. */
-  cursor: pointer; /* 마우스 오버 시 커서를 포인터로 변경해 클릭 가능함을 나타냅니다. */
+  font-size: 20px;
+  border: 2px solid #5e5f70;
+  border-radius: 8px;
+  cursor: pointer;
   appearance: none; /* 기본 브라우저 스타일을 제거합니다. */
-  background-color: #1a1a1a; /* 배경색을 추가합니다. */
-  color: #fff; /* 글자색을 변경해 대비를 높입니다. */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 드롭다운에 그림자 효과를 추가해 입체감을 줍니다. */
+  background-color: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%; /* .select-wrapper에 의해 너비가 결정되도록 변경합니다. */
+  /* max-width는 제거하거나 .select-wrapper에 맞춥니다. */
 }
 
-/* 드롭다운 화살표 스타일링을 위한 추가 스타일 */
-.breed-select::-ms-expand {
-  display: none; /* IE에서 기본 화살표를 숨깁니다. */
-}
-
-/* 필요한 경우 브라우저별 화살표 숨기기 */
-.breed-select::-webkit-calendar-picker-indicator {
-  display: none; /* Chrome에서 기본 화살표를 숨깁니다. */
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20px; /* 화살표를 내부 오른쪽 끝으로 조정합니다. */
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-top-color: #fff; /* 화살표 색상 */
+  pointer-events: none;
 }
