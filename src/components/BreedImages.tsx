@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { fetchBreedImages } from '../api/dogs';
+import React, { useEffect, useState } from 'react';
+import { fetchBreedImages, fetchRandomImages } from '../api/dogs';
 
 interface Props {
   breed: string;
@@ -10,18 +10,23 @@ const BreedImages: React.FC<Props> = ({ breed }) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const getBreedImages = async () => {
-      if (!breed) return;
-
+    const getImages = async () => {
       setLoading(true);
-      const data = await fetchBreedImages(breed);
+      let data;
+      if (breed) {
+        // 선택된 품종의 이미지를 가져옵니다.
+        data = await fetchBreedImages(breed);
+      } else {
+        // 랜덤한 품종의 이미지를 가져옵니다.
+        data = await fetchRandomImages(10); // 예: 10개의 랜덤 이미지를 요청
+      }
       if (data && data.message) {
-        setImages(data.message);
+        setImages(Array.isArray(data.message) ? data.message : [data.message]);
       }
       setLoading(false);
     };
 
-    getBreedImages();
+    getImages();
   }, [breed]);
 
   if (loading) return <p>Loading images...</p>;

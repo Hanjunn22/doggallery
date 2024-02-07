@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchBreeds } from '../api/dogs';
 
 interface Props {
@@ -11,7 +11,6 @@ const BreedList: React.FC<Props> = ({ onSelectBreed }) => {
 
   useEffect(() => {
     const getBreeds = async () => {
-      setLoading(true);
       const data = await fetchBreeds();
       if (data && data.message) {
         setBreeds(Object.keys(data.message));
@@ -25,8 +24,8 @@ const BreedList: React.FC<Props> = ({ onSelectBreed }) => {
   if (loading) return <p>Loading breeds...</p>;
 
   return (
-    <select onChange={(e) => onSelectBreed(e.target.value)}>
-      <option value="">Select a breed</option>
+    <select onChange={(e) => onSelectBreed(e.target.value)} defaultValue="">
+      <option value="">All Breeds</option>
       {breeds.map((breed) => (
         <option key={breed} value={breed}>
           {breed}

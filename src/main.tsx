@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { fetchBreeds } from './api/dogs';
+import React, { useState } from 'react';
 import BreedList from './components/BreedList';
 import BreedImages from './components/BreedImages';
 
 const Main = () => {
-  const [breed, setBreed] = useState<string>('');
-
-  useEffect(() => {
-    const getBreeds = async () => {
-      const data = await fetchBreeds();
-      console.log(data); // 데이터 확인 및 초기 품종 설정 로직 추가
-    };
-    
-    getBreeds();
-  }, []);
+  const [selectedBreed, setSelectedBreed] = useState<string>('');
 
   return (
     <div>
-      <BreedList onSelectBreed={setBreed} />
-      {breed && <BreedImages breed={breed} />}
+      <BreedList onSelectBreed={setSelectedBreed} />
+      <BreedImages breed={selectedBreed} />
     </div>
   );
-}
+};
 
 export default Main;

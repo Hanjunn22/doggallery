@@ -12,3 +12,8 @@ export const fetchBreedImages = async (breed: string): Promise<any> => {
   const response = await axios.get(`${API_BASE_URL}/breed/${breed}/images`);
   return response.data;
 };
+
+export const fetchRandomImages = async (count: number): Promise<any> => {
+    const response = await axios.get(`https://dog.ceo/api/breeds/image/random/${count}`);
+    return response.data;
+  };
