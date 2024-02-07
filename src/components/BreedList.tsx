@@ -25,7 +25,7 @@ const BreedList: React.FC<Props> = ({ onSelectBreed }) => {
   if (loading) return <p>Loading breeds...</p>;
 
   return (
-    <div className="select-wrapper"> {/* 추가된 Wrapper */}
+    <div className="select-wrapper">
       <select
         className="breed-select"
         onChange={(e) => onSelectBreed(e.target.value)}
