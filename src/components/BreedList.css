@@ -1,9 +1,9 @@
 .breed-select {
-  padding: 20px 25px; /* 패딩을 늘려 더 크게 만듭니다. */
+  padding: 10px 25px; /* 패딩을 늘려 더 크게 만듭니다. */
   margin: 20px auto;
   display: block;
   font-size: 20px; /* 폰트 크기를 늘려 가독성을 향상시킵니다. */
-  border: 2px solid #646cff; /* 보더 색상을 변경해 시각적으로 돋보이게 합니다. */
+  border: 2px solid #5e5f70; /* 보더 색상을 변경해 시각적으로 돋보이게 합니다. */
   border-radius: 8px; /* 보더 라운드를 조금 더 늘립니다. */
   width: 50%; /* 너비를 지정해 드롭다운의 크기를 조정합니다. */
   max-width: 300px; /* 최대 너비를 설정해 너무 커지지 않도록 합니다. */

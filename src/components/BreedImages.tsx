@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchBreedImages, fetchRandomImages } from "../api/dogs";
+import Loading from "./Loading";
 
 interface Props {
   breed: string;
@@ -30,7 +31,7 @@ const BreedImages: React.FC<Props> = ({ breed }) => {
   return (
     <div className="dog-images-container">
       {loading ? (
-        <p>Loading images...</p>
+        <><Loading /></>
       ) : (
         images.map((image, index) => (
           <img

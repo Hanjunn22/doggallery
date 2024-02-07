@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { fetchBreeds } from '../api/dogs';
+import React, { useEffect, useState } from "react";
+import { fetchBreeds } from "../api/dogs";
+import "./BreedList.css";
 
 interface Props {
   onSelectBreed: (breed: string) => void;
@@ -24,7 +25,11 @@ const BreedList: React.FC<Props> = ({ onSelectBreed }) => {
   if (loading) return <p>Loading breeds...</p>;
 
   return (
-    <select onChange={(e) => onSelectBreed(e.target.value)} defaultValue="">
+    <select
+      className="breed-select"
+      onChange={(e) => onSelectBreed(e.target.value)}
+      defaultValue=""
+    >
       <option value="">All Breeds</option>
       {breeds.map((breed) => (
         <option key={breed} value={breed}>
